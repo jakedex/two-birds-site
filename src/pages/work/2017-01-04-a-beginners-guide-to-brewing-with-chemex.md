@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
-title: Untitled
-image: /img/art/2.jpg
+title: Untitled 1
+image: /img/art/1.jpg
 description: Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time.
 tags:
   - brewing
