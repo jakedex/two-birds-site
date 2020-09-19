@@ -31,7 +31,7 @@
 .slick-prev {
   font-size: 0;
   line-height: 0;
-  top: 50%;
+  top: 40%;
   width: 20px;
   height: 20px;
   -webkit-transform: translate(0, -50%);

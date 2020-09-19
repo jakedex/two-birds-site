@@ -9,6 +9,11 @@ $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
+$gray: #aaa;
+
+@media screen and (min-width: 1024px)
+  .navbar
+    margin-top: 2em;
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -51,28 +56,14 @@ $black: #2b2523
     justify-content: center
     align-items: center
 
-.btn
-    display: inline-block
-    padding: 12px 16px 10px
-    font-size: 18px
-    font-size: 1rem
-    line-height: 1.25
-    background-color: #fff
-    border-radius: .25rem
-    text-decoration: none
-    font-weight: 700
-    color: #CC3700
-    text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
-
 .margin-top-0
   margin-top: 0 !important
 
-.navbar-item[aria-current="page"]
-  color: #3273dc
+.navbar-item
+  font-size: 1.2em;
+
+  &:hover
+    color: $gray !important;
 
 
 .navbar-item .icon
@@ -84,6 +75,26 @@ $black: #2b2523
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
+
+@media screen and (min-width: 1024px)
+  .navbar-start
+    margin-left: auto;
+    margin-right: auto;
+
+  .navbar-brand
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  .navbar > .container
+    flex-wrap: wrap;
+    justify-content: center;
+
+  .navbar > .container .navbar-menu, .container > .navbar .navbar-menu
+    margin-right: 0 !important;
+  .navbar > .container .navbar-brand, .container > .navbar .navbar-brand
+    margin-left: 0 !important;
+
 
 //Menu overrides
 $menu-item-color: $white-ter
@@ -123,17 +134,21 @@ $menu-label-color: $white-ter
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
 
+// index
+.index-page a
+  &:hover
+    color: $gray !important;
+
+
 @import "~bulma"
 
 // responsiveness
 +tablet-only
-  .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
 
 +mobile
-  .blog-list-item header
-    display: block
-  .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+  .featured-thumbnail
+    max-width: 400px !important;
+
+  .work-page
+    // max-width: 480px !important;
+    margin: 0 1em !important;

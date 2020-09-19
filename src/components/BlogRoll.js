@@ -18,7 +18,7 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div style={{maxWidth: '800px', margin: '0 auto'}}>
+      <div className="work-page" style={{maxWidth: '640px', margin: '0 auto'}}>
         <Slider {...sliderSettings}>
           {posts &&
           posts.map(({ node: post }) => (
@@ -26,7 +26,7 @@ class BlogRoll extends React.Component {
               <article>
                 <header>
                   {post.frontmatter.image ? (
-                    <div className="featured-thumbnail" style={{maxWidth: '560px', margin: '0 auto 2em'}}>
+                    <div className="featured-thumbnail" style={{maxWidth: '500px', margin: '0 auto 2em'}}>
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.image,

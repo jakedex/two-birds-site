@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-const linkStyle = { color: 'white', margin: '0.4em 0', textAlign: 'center' };
+const linkStyle = { fontSize: '1.2em', color: 'white', margin: '0.4em 0', textAlign: 'center'};
 
 export const IndexPageTemplate = ({
   image,
@@ -12,7 +12,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <div
-      className="margin-top-0"
+      className="index-page margin-top-0"
       style={{
         height: '100vh',
         width: '100vw',
@@ -24,6 +24,7 @@ export const IndexPageTemplate = ({
         })`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
+        backgroundColor:'black'
       }}
     >
       <div
