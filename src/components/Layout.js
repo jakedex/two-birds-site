@@ -15,6 +15,18 @@ const TemplateWrapper = ({ children, hideNav }) => {
         <meta name="description" content={description} />
 
         <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href={`${withPrefix('/')}vendor/slick.min.css`}
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href={`${withPrefix('/')}vendor/slick-theme.min.css`}
+        />
+
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href={`${withPrefix('/')}img/apple-touch-icon.png`}

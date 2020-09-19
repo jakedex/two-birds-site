@@ -2,6 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import Slider from 'react-slick'
+
+const sliderSettings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+}
 
 class BlogRoll extends React.Component {
   render() {
@@ -9,25 +18,24 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
-        {posts &&
+      <div>
+        <Slider {...sliderSettings}>
+          {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification`}
-              >
+            <div key={post.id} style={{outline: 'none'}}>
+              <article>
                 <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
+                  {post.frontmatter.image ? (
+                    <div className="featured-thumbnail" style={{maxWidth: '600px', margin: '0 auto 2em'}}>
                       <PreviewCompatibleImage
                         imageInfo={{
-                          image: post.frontmatter.featuredimage,
+                          image: post.frontmatter.image,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         }}
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
+                  <p style={{ textAlign: 'center' }}>
                     <span className="is-size-6">{post.frontmatter.title}</span>
                     <span className="is-size-6 is-block">
                       Oil, acrylic, and charcoal on canvas
@@ -40,6 +48,7 @@ class BlogRoll extends React.Component {
               </article>
             </div>
           ))}
+        </Slider>
       </div>
     )
   }
@@ -71,11 +80,9 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                featuredimage {
+                image {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 600, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
