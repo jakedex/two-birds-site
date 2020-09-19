@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({
         }}
       >
         <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-3-tablet is-size-3-widescreen"
+          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',

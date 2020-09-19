@@ -40,7 +40,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <h1 className="has-text-weight-bold is-size-3-mobile is-size-3-tablet is-size-3-widescreen">
+              <h1 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-5-widescreen">
                 SAM LAROM
               </h1>
             </Link>
