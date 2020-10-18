@@ -1,6 +1,8 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 path: /about
-title: About
+title: Bio
 ---
-Sam is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of Sam farms provides habitat for a great number of migratory and resident species.
+Sam Larom (b. 1995, Seoul) received his BFA from the Minneapolis College of Art and Design in 2019. He lives and works in Minneapolis, Minnesota.
+
+CV available upon request.
