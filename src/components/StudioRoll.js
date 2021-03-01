@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import Content, { HTMLContent } from './Content'
 
 class StudioRoll extends React.Component {
   render() {
@@ -14,42 +15,30 @@ class StudioRoll extends React.Component {
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
+                className={`blog-list-item tile is-child blog-list-preview`}
               >
-                <header>
-                  {post.frontmatter.featuredimage ? (
+                {post.frontmatter.date ? (
+                  <p className="post-meta date">
+                    {post.frontmatter.date}
+                </p>) : null}
+                {post.frontmatter.title ? (
+                  <header>
+                  <p className="post-meta title is-size-4">
+                    {post.frontmatter.title}
+                  </p>
+                </header>
+                ) : null}
+                {post.frontmatter.image ? (
                     <div className="featured-thumbnail">
                       <PreviewCompatibleImage
                         imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                          image: post.frontmatter.image,
+                          alt: `image thumbnail for ${post.frontmatter.title}`,
                         }}
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+                <HTMLContent content={post.html} />
               </article>
             </div>
           ))}
@@ -76,13 +65,14 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              html
               id
               fields {
                 slug
               }
               frontmatter {
                 title
+                date(formatString: "MMMM DD, YYYY")
                 templateKey
                 materials
                 size

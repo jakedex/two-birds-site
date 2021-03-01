@@ -33,12 +33,10 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "studio-post"}
-      - {label: "Image", name: "image", widget: image, required: false}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image (optional)", name: "image", widget: image, required: false}
+      - {label: "Title (optional)", name: "title", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Materials (optional)", name: "materials", widget: "string", required: false}
-      - {label: "Size (optional)", name: "size", widget: "string", required: false}
-      - {label: "Description (optional)", name: "description", widget: "text", required: false}
+      - {label: "Body (optional)", name: "body", widget: "markdown", required: false}
       - {label: "Tags (optional)", name: "tags", widget: "list", required: false}
 
   - name: "pages"

@@ -7,8 +7,8 @@ $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
-$body-color: #333
-$black: #2b2523
+$body-color: #000
+$black: #000
 $gray: #aaa;
 
 @media screen and (min-width: 1024px)
@@ -61,6 +61,7 @@ $gray: #aaa;
 
 .navbar-item
   font-size: 1.2em;
+  color: $black !important;
 
   &:hover
     color: $gray !important;
@@ -131,14 +132,27 @@ $menu-label-color: $white-ter
   display: flex;
   margin-bottom: 1em;
 .blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  flex-basis: 100%;
+.blog-list-preview
+  color: $black;
+  padding: 1.25rem;
+  height: 100%;
+  color: $black;
+  box-shadow: none;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  .title
+    color: $black;
+  .date
+    color: $gray;
 
 // index
 .index-page a
   &:hover
     color: $gray !important;
 
+a
+  color: $gray !important;
 
 @import "~bulma"
 
