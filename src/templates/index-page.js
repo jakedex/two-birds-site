@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          image && !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
