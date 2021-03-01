@@ -12,8 +12,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "work"
+    label: "Work"
     folder: "src/pages/work"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -21,11 +21,11 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Image", name: "image", widget: image}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Materials", name: "materials", widget: "string"}
-      - {label: "Size", name: "size", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Description (optional)", name: "description", widget: "text"}
-      - {label: "Tags (optional)", name: "tags", widget: "list"}
+      - {label: "Materials (optional)", name: "materials", widget: "string", required: false}
+      - {label: "Size (optional)", name: "size", widget: "string", required: false}
+      - {label: "Description (optional)", name: "description", widget: "text", required: false}
+      - {label: "Tags (optional)", name: "tags", widget: "list", required: false}
 
   - name: "pages"
     label: "Pages"
@@ -36,7 +36,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
+          - {label: Image, name: image, widget: image, required: false}
 
       - file: "src/pages/about/index.md"
         label: "About"

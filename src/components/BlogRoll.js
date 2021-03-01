@@ -30,19 +30,15 @@ class BlogRoll extends React.Component {
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.image,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                          alt: `image thumbnail ${post.frontmatter.title}`,
                         }}
                       />
                     </div>
                   ) : null}
                   <p style={{ textAlign: 'center' }}>
                     <span className="is-size-6">{post.frontmatter.title}</span>
-                    <span className="is-size-6 is-block">
-                      Oil, acrylic, and charcoal on canvas
-                    </span>
-                    <span className="is-size-6 is-block">
-                      48” x 60”
-                    </span>
+                    <span className="is-size-6 is-block">{post.frontmatter.materials}</span>
+                    <span className="is-size-6 is-block">{post.frontmatter.size}</span>
                   </p>
                 </header>
               </article>
@@ -80,6 +76,8 @@ export default () => (
               frontmatter {
                 title
                 templateKey
+                materials
+                size
                 image {
                   childImageSharp {
                     fluid(maxWidth: 600, quality: 100) {
