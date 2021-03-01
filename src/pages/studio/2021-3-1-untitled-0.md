@@ -1,10 +1,9 @@
 ---
-templateKey: work-post
-title: Untitled 0
-image: /img/art/0.jpg
+templateKey: studio-post
+title: New Stew
 materials: Oil, acrylic, and charcoal on canvas
 size: 29.5" x 34"
-description: asdf
+description: asdf testing test
 tags:
   - asdf
 ---

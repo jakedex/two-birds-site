@@ -18,8 +18,22 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "work-post"}
       - {label: "Image", name: "image", widget: image}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Materials (optional)", name: "materials", widget: "string", required: false}
+      - {label: "Size (optional)", name: "size", widget: "string", required: false}
+      - {label: "Description (optional)", name: "description", widget: "text", required: false}
+      - {label: "Tags (optional)", name: "tags", widget: "list", required: false}
+  - name: "studio"
+    label: "Studio"
+    folder: "src/pages/studio"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "studio-post"}
+      - {label: "Image", name: "image", widget: image, required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Materials (optional)", name: "materials", widget: "string", required: false}
@@ -43,5 +57,13 @@ collections:
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "src/pages/contact/index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}

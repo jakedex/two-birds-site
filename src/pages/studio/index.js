@@ -1,16 +1,16 @@
 import React from 'react'
 
 import Layout from '../../components/Layout'
-import WorkRoll from '../../components/WorkRoll'
+import StudioRoll from '../../components/StudioRoll'
 
-export default class WorkIndexPage extends React.Component {
+export default class StudioIndexPage extends React.Component {
   render() {
     return (
       <Layout>
         <section className="section">
           <div className="container">
             <div className="content">
-              <WorkRoll />
+              <StudioRoll />
             </div>
           </div>
         </section>

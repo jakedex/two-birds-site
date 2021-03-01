@@ -6,12 +6,15 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const BlogPostTemplate = ({
+export const WorkPostTemplate = ({
   content,
   contentComponent,
   description,
   tags,
   title,
+  image,
+  materials,
+  size,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -46,25 +49,27 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
+WorkPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  materials: PropTypes.string,
+  size: PropTypes.string,
   helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const WorkPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <WorkPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate="%s | Work">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
@@ -74,21 +79,23 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        materials={post.frontmatter.materials}
+        size={post.frontmatter.size}
       />
     </Layout>
   )
 }
 
-BlogPost.propTypes = {
+WorkPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default WorkPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query WorkPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -97,6 +104,8 @@ export const pageQuery = graphql`
         title
         description
         tags
+        materials
+        size
       }
     }
   }
