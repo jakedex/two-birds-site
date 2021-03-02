@@ -27,6 +27,12 @@ const TemplateWrapper = ({ children, hideNav }) => {
         />
 
         <link
+          rel="stylesheet"
+          type="text/css"
+          href={`${withPrefix('/')}vendor/zoom-styles.css`}
+        />
+
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href={`${withPrefix('/')}img/apple-touch-icon.png`}

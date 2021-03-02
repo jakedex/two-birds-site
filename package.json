@@ -27,6 +27,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
+    "react-medium-image-zoom": "^4.3.1",
     "react-slick": "^0.27.11",
     "uuid": "^7.0.0"
   },
