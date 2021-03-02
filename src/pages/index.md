@@ -1,5 +1,5 @@
 ---
 templateKey: index-page
 title: SAM LAROM
-image: ""
+image: /img/home.jpg
 ---
