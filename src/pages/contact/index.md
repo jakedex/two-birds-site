@@ -3,7 +3,8 @@ templateKey: about-page
 path: /contact
 title: Contact
 ---
-**Sam Larom**<br>
+**SAM LAROM**<br>
+
 
 
 [samlarom@gmail.com](mailto:samlarom@gmail.com)<br>
