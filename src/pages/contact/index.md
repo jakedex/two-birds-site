@@ -8,4 +8,4 @@ title: Contact
 
 Instagram: [@samlarom](https://www.instagram.com/samlarom/)<br>
 
-All images on www.samlarom.com are copyrighted.
+All artwork images © 2021 SAM LAROM
