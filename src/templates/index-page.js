@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-const linkStyle = { fontSize: '1.2em', color: 'white', margin: '0.4em 0', textAlign: 'center'};
+const linkStyle = { fontSize: '1.2em', color: 'black', margin: '0.4em 0', textAlign: 'center'};
 
 export const IndexPageTemplate = ({
   image,
@@ -24,7 +24,7 @@ export const IndexPageTemplate = ({
         })`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
-        backgroundColor:'black'
+        backgroundColor:'white'
       }}
     >
       <div
@@ -39,7 +39,7 @@ export const IndexPageTemplate = ({
         <h1
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-5-widescreen"
           style={{
-            color: 'white',
+            color: 'black',
             lineHeight: '1',
             padding: '0.5em',
           }}
@@ -51,7 +51,7 @@ export const IndexPageTemplate = ({
           flexDirection: 'column'
           }}>
             <Link style={linkStyle} to="/work">work</Link>
-            <Link style={linkStyle} to="/studio">studio</Link>
+            {/* <Link style={linkStyle} to="/studio">studio</Link> */}
             <Link style={linkStyle} to="/about">bio</Link>
             <Link style={linkStyle} to="/contact">contact</Link>
           </div>

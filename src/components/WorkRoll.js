@@ -12,39 +12,69 @@ const sliderSettings = {
   slidesToScroll: 1,
 }
 
+const ALL_YEARS = 'all'
+
+const uniq = a => [...new Set(a)];
+const getYears = (posts) => uniq(posts.map(({ node: post }) => post.frontmatter.date))
+
+const filterPostsByYear = (posts, year) => posts.filter(({ node: post }) => year === post.frontmatter.date || year === ALL_YEARS)
+
+const yearPicker = (posts, selectedYear, onSwitchYear) => (
+  <div className="year-picker" style={{display: 'inline-flex', border: '1px solid black', borderRadius: 99, padding: "0 12px" }}>
+    {posts && [ALL_YEARS, ...getYears(posts)].map((year, i) => (
+      <a key={year} className={`is-size-6 ${selectedYear === year ? 'is-selected' : ''}`} onClick={() => onSwitchYear(year)} style={{marginLeft: i > 0 ? 8 : 0}}>{year}</a>
+    ))}
+  </div>
+)
+
+const imageSlider = (posts) => (
+  <Slider {...sliderSettings}>
+    {posts.map(({ node: post }) => (
+      <div key={post.id} style={{outline: 'none'}}>
+        <article>
+          <header>
+            {post.frontmatter.image ? (
+              <div className="featured-thumbnail" style={{maxWidth: '500px', margin: '0 auto 2em'}}>
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: post.frontmatter.image,
+                    alt: `image thumbnail ${post.frontmatter.title}`,
+                  }}
+                />
+              </div>
+            ) : null}
+            <p style={{ textAlign: 'center' }}>
+              <span className="is-size-6">{post.frontmatter.title}</span>
+              <span className="is-size-6 is-block">{post.frontmatter.materials}</span>
+              <span className="is-size-6 is-block">{post.frontmatter.size}</span>
+            </p>
+          </header>
+        </article>
+      </div>
+    ))}
+  </Slider>
+)
+
 class WorkRoll extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { selectedYear: ALL_YEARS }
+  }
+
+  switchYear = (newSelection) => {
+    if (this.state.selectedYear !== newSelection) {
+      this.setState({ selectedYear: newSelection })
+    }
+  }
+
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="work-page" style={{maxWidth: '640px', margin: '0 auto'}}>
-        <Slider {...sliderSettings}>
-          {posts &&
-          posts.map(({ node: post }) => (
-            <div key={post.id} style={{outline: 'none'}}>
-              <article>
-                <header>
-                  {post.frontmatter.image ? (
-                    <div className="featured-thumbnail" style={{maxWidth: '500px', margin: '0 auto 2em'}}>
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.image,
-                          alt: `image thumbnail ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p style={{ textAlign: 'center' }}>
-                    <span className="is-size-6">{post.frontmatter.title}</span>
-                    <span className="is-size-6 is-block">{post.frontmatter.materials}</span>
-                    <span className="is-size-6 is-block">{post.frontmatter.size}</span>
-                  </p>
-                </header>
-              </article>
-            </div>
-          ))}
-        </Slider>
+      <div className="work-page" style={{maxWidth: '640px', margin: '0 auto', textAlign: 'center'}}>
+        { posts && yearPicker(posts, this.state.selectedYear, this.switchYear) }
+        { posts && imageSlider(filterPostsByYear(posts, this.state.selectedYear)) }
       </div>
     )
   }
@@ -74,6 +104,7 @@ export default () => (
                 slug
               }
               frontmatter {
+                date(formatString: "YYYY")
                 title
                 templateKey
                 materials

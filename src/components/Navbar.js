@@ -40,7 +40,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <h1 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-5-widescreen">
+              <h1 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-5-widescreen" style={{letterSpacing: "-0.2px"}}>
                 SAM LAROM
               </h1>
             </Link>
@@ -63,9 +63,9 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/work">
                 work
               </Link>
-              <Link className="navbar-item" to="/studio">
+              {/* <Link className="navbar-item" to="/studio">
                 studio
-              </Link>
+              </Link> */}
               <Link className="navbar-item" to="/about">
                 bio
               </Link>
