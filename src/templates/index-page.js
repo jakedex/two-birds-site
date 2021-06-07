@@ -51,7 +51,6 @@ export const IndexPageTemplate = ({
           flexDirection: 'column'
           }}>
             <Link style={linkStyle} to="/work">work</Link>
-            {/* <Link style={linkStyle} to="/studio">studio</Link> */}
             <Link style={linkStyle} to="/about">bio</Link>
             <Link style={linkStyle} to="/contact">contact</Link>
           </div>
