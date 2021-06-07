@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Sam Larom | Artist',
+    title: 'Sam Larom',
     description:
-      '',
+      'Sam Larom (b. 1995, Seoul) received his BFA from the Minneapolis College of Art and Design in 2019. He lives and works in Minneapolis, Minnesota.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
