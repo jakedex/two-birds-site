@@ -43,10 +43,10 @@ const imageSlider = (posts) => (
                 />
               </div>
             ) : null}
-            <p style={{ textAlign: 'center' }}>
+            <p className="didactic">
               <span className="is-size-6">{post.frontmatter.title}</span>
-              <span className="is-size-6 is-block">{post.frontmatter.materials}</span>
-              <span className="is-size-6 is-block">{post.frontmatter.size}</span>
+              <span className="is-size-6">{post.frontmatter.materials}</span>
+              <span className="is-size-6">{post.frontmatter.size}</span>
             </p>
           </header>
         </article>
