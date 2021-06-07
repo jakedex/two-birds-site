@@ -45,6 +45,7 @@ const imageSlider = (posts) => (
             ) : null}
             <p className="didactic">
               <span className="is-size-6">{post.frontmatter.title}</span>
+              <span className="is-size-6">{post.frontmatter.date}</span>
               <span className="is-size-6">{post.frontmatter.materials}</span>
               <span className="is-size-6">{post.frontmatter.size}</span>
             </p>
