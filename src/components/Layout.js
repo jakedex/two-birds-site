@@ -53,16 +53,12 @@ const TemplateWrapper = ({ children, hideNav }) => {
         <link
           rel="mask-icon"
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
+          color="#A4060F"
         />
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
-        <meta
-          property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
-        />
       </Helmet>
       {!hideNav && <Navbar />}
       <div>{children}</div>
