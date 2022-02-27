@@ -117,6 +117,7 @@ export const IndexPageTemplate = ({
     }}>
       <img
         style={{
+          borderRadius: 16,
           filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.28))',
           width: '80%',
           maxWidth: '1200px'
@@ -181,6 +182,7 @@ export const IndexPageTemplate = ({
             }}>
               <img
                 style={{
+                  borderRadius: 16,
                   filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
                   margin: '1rem',
                   maxWidth: '480px'
@@ -190,6 +192,7 @@ export const IndexPageTemplate = ({
               />
               <img
                 style={{
+                  borderRadius: 16,
                   filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
                   margin: '1rem',
                   maxWidth: '480px'
@@ -205,6 +208,7 @@ export const IndexPageTemplate = ({
             }}>
               <img
                 style={{
+                  borderRadius: 16,
                   filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
                   margin: '1rem',
                   maxWidth: '480px'
@@ -214,6 +218,7 @@ export const IndexPageTemplate = ({
               />
               <img
                 style={{
+                  borderRadius: 16,
                   filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
                   margin: '1rem',
                   maxWidth: '480px'

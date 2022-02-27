@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Two Birds, One Stone',
+    title: 'TWO BIRDS, ONE STONE',
     description:
       'A collection of 520 unique hand drawn artworks. Each piece has been formed with magic and have been energetically attuned to you.',
   },
