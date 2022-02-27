@@ -1,5 +1,6 @@
 ---
 templateKey: index-page
-title: SAM LAROM
-image: /img/white.jpg
+title: TWO BIRDS, ONE STONE
+logo: /img/logo.svg
+image: /img/1:500.jpg
 ---

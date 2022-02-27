@@ -41,7 +41,7 @@ const Navbar = class extends React.Component {
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
               <h1 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-5-widescreen" style={{letterSpacing: "-0.2px"}}>
-                SAM LAROM
+                TWO BIRDS, ONE STONE
               </h1>
             </Link>
             {/* Hamburger menu */}

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Sam Larom',
+    title: 'Two Birds, One Stone',
     description:
-      'Sam Larom (b. 1995, Seoul) received his BFA from the Minneapolis College of Art and Design in 2019. He lives and works in Minneapolis, Minnesota.',
+      'A collection of 520 unique hand drawn artworks. Each piece has been formed with magic and have been energetically attuned to you.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
