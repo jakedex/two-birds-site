@@ -9,10 +9,10 @@ const LinkButton = ({title, link}) => (
     to={link}
     style={{
       display: 'inline-block',
-      color: '#8832CA',
+      color: '#39A0FF',
       padding: '1rem 2rem',
       margin: '0 1rem 2rem',
-      border: '3px solid rgba(136,50,202,0.2)',
+      border: '3px solid rgba(57,160,255,0.2)',
       borderRadius: '99px',
       textAlign: 'center',
       width: '360px',
@@ -74,7 +74,7 @@ export const IndexPageTemplate = ({
   <div
     className="index-page"
     style={{
-      backgroundColor: '#F5B287',
+      backgroundColor: '#fff',
       fontSize: '1.5rem'
     }}
   >
@@ -103,7 +103,7 @@ export const IndexPageTemplate = ({
       </h1> */}
       <img
         style={{
-          margin: '5rem 0 3rem',
+          margin: '5rem 0 4rem',
           width: '60%',
           maxWidth: '768px'
         }}
