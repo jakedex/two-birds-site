@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Zoom from 'react-medium-image-zoom'
+
 
 const LinkButton = ({title, link}) => (
   <Link
@@ -25,7 +27,7 @@ const LinkButton = ({title, link}) => (
 
 const MarqueeText = ({text}) => (
   <div style={{
-    marginRight: '1.5rem',
+    marginRight: '2rem',
     transition: 'opacity .15s linear',
   }}>
     {text}
@@ -36,12 +38,14 @@ const MarqueeBanner = ({text}) => (
   <div
     style={{
       background: 'white',
+      // color: 'white',
       borderTop: '2px solid black',
       borderBottom: '2px solid black',
       display: 'flex',
       lineHeight: '1',
       fontSize: '1rem',
-      letterSpacing: 0,
+      fontWeight: 500,
+      letterSpacing: '0.25px',
       textTransform: 'uppercase',
       width: '100%',
       zIndex: '99',
@@ -53,7 +57,7 @@ const MarqueeBanner = ({text}) => (
       className = 'animate-text'
       style={{
         display: 'flex',
-        padding: '0.5rem 0',
+        padding: '0.75rem 0',
         justifyContent: 'space-around',
         alignItems: 'center',
         flexDirection: 'row',
@@ -62,9 +66,25 @@ const MarqueeBanner = ({text}) => (
         willChange: 'transform'
       }}
     >
-      {[...Array(20)].map((el, i) => (<MarqueeText key={i} text={text} />))}
+      {[...Array(10)].map((el, i) => (<MarqueeText key={i} text={text} />))}
     </div>
   </div>
+)
+
+const Artwork = ({src}) => (
+  <Zoom>
+    <img
+      style={{
+        borderRadius: 8,
+        filter: 'drop-shadow(rgba(0, 0, 0, 0.1) 0px 8px 16px) drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 10px)',
+        margin: '1vw',
+        width: '16vw',
+        maxWidth: '280px'
+      }}
+      src={src}
+      alt=""
+    />
+  </Zoom>
 )
 
 export const IndexPageTemplate = ({
@@ -178,54 +198,63 @@ export const IndexPageTemplate = ({
             <div style={{
               display: 'flex',
               flexDirection: 'row',
-              alignItems: 'center'
+              alignItems: 'center',
             }}>
-              <img
+              <h2
+                className="has-text-weight-bold is-size-1-mobile is-size-1-tablet is-size-1-widescreen"
                 style={{
-                  borderRadius: 16,
-                  filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
-                  margin: '1rem',
-                  maxWidth: '480px'
+                  color: '#39A0FF',
+                  fontFamily: 'PicNic',
+                  fontSize: '4rem',
+                  lineHeight: '1',
+                  padding: '0.5em',
                 }}
-                src='img/2:500.jpg'
-                alt=""
-              />
-              <img
-                style={{
-                  borderRadius: 16,
-                  filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
-                  margin: '1rem',
-                  maxWidth: '480px'
-                }}
-                src='img/3:500.jpg'
-                alt=""
-              />
+              >
+                INITIAL RELEASE &nbsp; 05/05/22
+              </h2>
             </div>
             <div style={{
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center'
             }}>
-              <img
+              <Artwork src="img/1:500.jpg" />
+              <Artwork src="img/2:500.jpg" />
+              <Artwork src="img/3:500.jpg" />
+              <Artwork src="img/4:500.jpg" />
+              <Artwork src="img/5:500.jpg" />
+            </div>
+
+
+            <div style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: '8rem'
+            }}>
+              <h2
+                className="has-text-weight-bold is-size-1-mobile is-size-1-tablet is-size-1-widescreen"
                 style={{
-                  borderRadius: 16,
-                  filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
-                  margin: '1rem',
-                  maxWidth: '480px'
+                  color: '#39A0FF',
+                  fontFamily: 'PicNic',
+                  fontSize: '4rem',
+                  lineHeight: '1',
+                  padding: '0.5em',
                 }}
-                src='img/4:500.jpg'
-                alt=""
-              />
-              <img
-                style={{
-                  borderRadius: 16,
-                  filter: 'drop-shadow(0px 39px 69px rgba(0, 0, 0, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.28))',
-                  margin: '1rem',
-                  maxWidth: '480px'
-                }}
-                src='img/5:500.jpg'
-                alt=""
-              />
+              >
+                SECOND RELEASE &nbsp; 06/05/22
+              </h2>
+            </div>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center'
+            }}>
+              <Artwork src="img/6:500.jpg" />
+              <Artwork src="img/mystery.png" />
+              <Artwork src="img/mystery.png" />
+              <Artwork src="img/mystery.png" />
+              <Artwork src="img/mystery.png" />
             </div>
           </div>
         </div>
