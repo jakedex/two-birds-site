@@ -158,7 +158,7 @@ export const IndexPageTemplate = ({
               <br />
               <br />
             </div>
-            <div className="social-button-group" style={{
+            <div className="link-button-group" style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center'
