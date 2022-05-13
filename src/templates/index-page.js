@@ -9,6 +9,7 @@ import Zoom from 'react-medium-image-zoom'
 const LinkButton = ({title, link}) => (
   <Link
     to={link}
+    className="link-button"
     style={{
       display: 'inline-block',
       color: '#39A0FF',
@@ -71,21 +72,21 @@ const MarqueeBanner = ({text}) => (
   </div>
 )
 
-const Artwork = ({src}) => (
-  <Zoom>
-    <img
-      style={{
-        borderRadius: 8,
-        filter: 'drop-shadow(rgba(0, 0, 0, 0.1) 0px 8px 16px) drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 10px)',
-        margin: '1vw',
-        width: '16vw',
-        maxWidth: '280px'
-      }}
-      src={src}
-      alt=""
-    />
-  </Zoom>
-)
+const Artwork = ({src, isMobile}) => {
+  const img = <img
+    style={{
+      borderRadius: 8,
+      filter: 'drop-shadow(rgba(0, 0, 0, 0.1) 0px 8px 16px) drop-shadow(rgba(0, 0, 0, 0.15) 0px 2px 10px)',
+      margin: '1vw',
+      width: '16vw',
+      maxWidth: '280px'
+    }}
+    src={src}
+    alt=""
+  />
+
+  return isMobile ? img : <Zoom>{img}</Zoom>
+}
 
 export const IndexPageTemplate = ({
   image,
@@ -109,19 +110,21 @@ export const IndexPageTemplate = ({
         flexDirection: 'column',
       }}
     >
-      {/* <h1
-        className="has-text-weight-bold is-size-1-mobile is-size-1-tablet is-size-1-widescreen"
+      <h2
+        className="is-hidden-tablet has-text-weight-bold"
         style={{
-          color: '#D4FF00',
-          fontFamily: 'Pilowlava',
-          fontSize: '4rem',
+          color: '#39A0FF',
+          fontFamily: 'PicNic',
+          fontSize: '2rem',
           lineHeight: '1',
           padding: '0.5em',
+          margin: '4rem 0 2rem'
         }}
       >
-        {title}
-      </h1> */}
+        TWO BIRDS, ONE STONE
+      </h2>
       <img
+        className="is-hidden-mobile"
         style={{
           margin: '5rem 0 4rem',
           width: '60%',
@@ -212,49 +215,78 @@ export const IndexPageTemplate = ({
               >
                 INITIAL RELEASE &nbsp; 05/05/22
               </h2>
+            
             </div>
-            <div style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center'
-            }}>
-              <Artwork src="img/1:500.jpg" />
-              <Artwork src="img/2:500.jpg" />
-              <Artwork src="img/3:500.jpg" />
-              <Artwork src="img/4:500.jpg" />
-              <Artwork src="img/5:500.jpg" />
+            <div className="artworks-container">
+              <div className="artworks is-hidden-mobile" style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center'
+              }}>
+                <Artwork src="img/1:500.jpg" />
+                <Artwork src="img/2:500.jpg" />
+                <Artwork src="img/3:500.jpg" />
+                <Artwork src="img/4:500.jpg" />
+                <Artwork src="img/5:500.jpg" />
+              </div>
+              <div className="artworks is-hidden-tablet" style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center'
+              }}>
+                <Artwork isMobile src="img/1:500.jpg" />
+                <Artwork isMobile src="img/2:500.jpg" />
+                <Artwork isMobile src="img/3:500.jpg" />
+                <Artwork isMobile src="img/4:500.jpg" />
+                <Artwork isMobile src="img/5:500.jpg" />
+              </div>
             </div>
 
 
-            <div style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginTop: '8rem'
-            }}>
-              <h2
-                className="has-text-weight-bold is-size-1-mobile is-size-1-tablet is-size-1-widescreen"
-                style={{
-                  color: '#39A0FF',
-                  fontFamily: 'PicNic',
-                  fontSize: '4rem',
-                  lineHeight: '1',
-                  padding: '0.5em',
-                }}
-              >
-                SECOND RELEASE &nbsp; 06/05/22
-              </h2>
-            </div>
-            <div style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center'
-            }}>
-              <Artwork src="img/6:500.jpg" />
-              <Artwork src="img/mystery.png" />
-              <Artwork src="img/mystery.png" />
-              <Artwork src="img/mystery.png" />
-              <Artwork src="img/mystery.png" />
+              <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: '8rem'
+              }}>
+                <h2
+                  className="has-text-weight-bold is-size-1-mobile is-size-1-tablet is-size-1-widescreen"
+                  style={{
+                    color: '#39A0FF',
+                    fontFamily: 'PicNic',
+                    fontSize: '4rem',
+                    lineHeight: '1',
+                    padding: '0.5em',
+                  }}
+                >
+                  SECOND RELEASE &nbsp; 06/05/22
+                </h2>
+              </div>
+
+            <div className="artworks-container">
+              <div className="artworks is-hidden-mobile" style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center'
+              }}>
+                <Artwork src="img/6:500.jpg" />
+                <Artwork src="img/mystery.png" />
+                <Artwork src="img/mystery.png" />
+                <Artwork src="img/mystery.png" />
+                <Artwork src="img/mystery.png" />
+              </div>
+              
+              <div className="artworks is-hidden-tablet" style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center'
+              }}>
+                <Artwork isMobile src="img/1:500.jpg" />
+                <Artwork isMobile src="img/2:500.jpg" />
+                <Artwork isMobile src="img/3:500.jpg" />
+                <Artwork isMobile src="img/4:500.jpg" />
+                <Artwork isMobile src="img/5:500.jpg" />
+              </div>
             </div>
           </div>
         </div>
