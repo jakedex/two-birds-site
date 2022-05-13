@@ -110,7 +110,7 @@ export const IndexPageTemplate = ({
         flexDirection: 'column',
       }}
     >
-      <h2
+      {/* <h2
         className="is-hidden-tablet has-text-weight-bold"
         style={{
           color: '#39A0FF',
@@ -122,9 +122,8 @@ export const IndexPageTemplate = ({
         }}
       >
         TWO BIRDS, ONE STONE
-      </h2>
+      </h2> */}
       <img
-        className="is-hidden-mobile"
         style={{
           margin: '5rem 0 4rem',
           width: '60%',
@@ -246,8 +245,7 @@ export const IndexPageTemplate = ({
               <div style={{
                 display: 'flex',
                 flexDirection: 'row',
-                alignItems: 'center',
-                marginTop: '8rem'
+                alignItems: 'center'
               }}>
                 <h2
                   className="has-text-weight-bold is-size-1-mobile is-size-1-tablet is-size-1-widescreen"
@@ -257,6 +255,7 @@ export const IndexPageTemplate = ({
                     fontSize: '4rem',
                     lineHeight: '1',
                     padding: '0.5em',
+                    marginTop: '8rem'
                   }}
                 >
                   SECOND RELEASE &nbsp; 06/05/22
@@ -281,11 +280,11 @@ export const IndexPageTemplate = ({
                 flexDirection: 'row',
                 alignItems: 'center'
               }}>
-                <Artwork isMobile src="img/1:500.jpg" />
-                <Artwork isMobile src="img/2:500.jpg" />
-                <Artwork isMobile src="img/3:500.jpg" />
-                <Artwork isMobile src="img/4:500.jpg" />
-                <Artwork isMobile src="img/5:500.jpg" />
+                <Artwork isMobile src="img/6:500.jpg" />
+                <Artwork isMobile src="img/mystery.png" />
+                <Artwork isMobile src="img/mystery.png" />
+                <Artwork isMobile src="img/mystery.png" />
+                <Artwork isMobile src="img/mystery.png" />
               </div>
             </div>
           </div>
